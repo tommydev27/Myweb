@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>tommy.developer</title>
+    <style>
+        body {
+            background: #f4f4f4;
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .profile-name i {
+            font-size: 18px;
+            color: #007bff;
+            margin-bottom: 4px;
+            margin-left: 5px;
+            border-radius: 50%;
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .profile-description {
+            font-size: 10px;
+            color: gray;
+            text-align: left;
+            margin-top: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            width: 350px;
+            border: 0px solid hsl(0, 0%, 100%);
+            background: transparent;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0px 2px rgba(0,0,0,0.3);
+            color: black;
+            transition: background 0.3s ease;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 0px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .circle-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            border: 2.5px solid #007bff;
+            padding: 4px;
+            background-color: white;
+            box-sizing: border-box;
+            object-fit: cover;
+            position: absolute;
+            bottom: 3px;
+            left: 14.5%;
+            transform: translateX(-50%);
+        }
+
+        .buttons button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #007bff;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .buttons button span.material-symbols-outlined {
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 18px;
+            font-size: 10px;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .settings-card {
+            display: none;
+        }
+
+        h2 {
+            font-size: 10px;
+            color: #333333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+        }
+
+        h3 {
+            font-size: 10px;
+            color: #333333;
+            text-align: center;
+            display: flex;
+            font-family: 'Siegra', monospace;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .material-symbols-outlined {
+            font-size: 15px;
+            color: #696969;
+            margin-top: 0px;
+        }
+
+        .digital-text {
+            font-size: 8px;
+            color: #000;
+            font-family: 'Press Start 2P', monospace;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .header-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 50px;
+        }
+
+        .header-icons button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            font-size: 18px;
+            color: #808080;
+            height: 35px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .header-icons button span {
+            font-size: 23px;
+            margin: 10px;
+        }
+
+        @keyframes blink {
+            0% {
+                border-color: #007bff;
+                background-color: red;
+            }
+            50% {
+                border-color: #007bff;
+                background-color: white;
+            }
+            100% {
+                border-color: red;
+                background-color: #007bff;
+            }
+        }
+
+        .header-icons button:active {
+            animation: blink 0.5s 2;
+        }
+
+        #note-container img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #note-container p {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        footer img {
+            transition: transform 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.2);
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 12px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your content here -->
+<div class="container">
+    <div class="profile-card">
+        <div class="profile-image-container">
+            <img src="https://iili.io/2CdXQ1e.md.png" alt="Alex Musk" class="profile-image">
+            <img src="https://iili.io/2CHtVnt.md.jpg" alt="Profile" class="circle-image">
+        </div>
+        <p class="profile-name">
+            TOMMY
+            <i class="fas fa-check-circle"></i>
+        </p>
+        <p class="profile-description">Web Developer | Teknologi dan Desain</p>
+        <div id="note-container" style="margin-top: 20px; padding: 10px; border: 1px solid #ddd; display: none; height: 400px; overflow: auto; border-radius: 10px; width: 340px; background-color: #f9f9f9; margin-left: -20px; margin-right: 0px;"></div>
+        <div class="header-icons">
+            <button onclick="showPage('page1')"><i class="fas fa-photo-video"></i></button>
+            <button onclick="showPage('page2')"><i class="fas fa-star"></i></button>
+            <button onclick="showPage('page3')"><i class="fas fa-icons"></i></button>
+            <button onclick="showPage('page4')"><i class="fas fa-sitemap"></i></button>
+            <button onclick="showPage('page5')"><i class="fas fa-share-alt"></i></button>
+        </div>
+        <div class="buttons">
+            <button onclick="redirect('https://tommydev27.github.io/tommy.website3/')">
+                <span class="material-symbols-outlined">image</span>PICT SCHME
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/Keyboardtmdev/')">
+                <span class="material-symbols-outlined">keyboard</span>KEYBOARD 2
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/tommydev2711/')">
+                <span class="material-symbols-outlined">text_snippet</span>STRING TEXT
+            </button>
+            <button onclick="redirect('https://tommydev27.github.io/tommy.website-demo/')">
+                <span class="material-symbols-outlined">info</span>Info-Website
+            </button>
+        </div>
+        <div>
+            <h2>Website masih dalam pengembangan</h2>
+            <footer>Design Tommy | Versi 1.0 ®</footer>
+        </div>
+    </div>
+    <h3 class="digital-text">ANDROlD VERSI
+        <span class="material-symbols-outlined">android</span>
+    </h3>
+    <div class="social-icons">
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+<meta property="og:title" content="Tommy Website" />
+<meta property="og:description" content="web design" />
+<meta property="og:image" content="https://iili.io/2CHtVnt.md.jpg" />
+
+<script>
+    const notes = {
+        page1: `
+            <img src="https://iili.io/2lbN4qB.md.jpg" alt="Mood" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Catatan untuk Page 1 (Mood). Ini adalah deskripsi gambar mood yang relevan.</p>
+        `,
+        page2: `
+            <img src="https://iili.io/stars-image.png" alt="Stars" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Catatan untuk Page 2 (Stars). Jelaskan arti dari ikon stars.</p>
+        `,
+        page3: `
+            <img src="https://iili.io/motion-photo-image.png" alt="Motion Photos" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Catatan untuk Page 3 (Motion Photos). Motion photos memberikan kesan dinamis.</p>
+        `,
+        page4: `
+            <img src="https://iili.io/counter-image.png" alt="Counter 8" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Catatan untuk Page 4 (Counter 8). Jelaskan penggunaan counter ini.</p>
+        `,
+        page5: `
+            <img src="https://iili.io/adb-image.png" alt="ADB" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+            <p>Catatan untuk Page 5 (ADB). ADB adalah alat debugging Android.</p>
+        `
+    };
+
+    function showPage(pageId) {
+        const noteContainer = document.getElementById("note-container");
+        noteContainer.innerHTML = notes[pageId] || "Catatan tidak ditemukan!";
+        noteContainer.style.display = "block";
+    }
+</script>
+
+<script>
+    function redirect(url) {
+        window.location.href = url;
+    }
+
+    function nextPage() {
+        alert("Akan dialihkan ke halaman selanjutnya!");
+    }
+</script>
